@@ -65,7 +65,7 @@ function startRecording() {
 		audioContext = new AudioContext();
 
 		//update the format 
-		document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz"
+		//document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz"
 
 		/*  assign to gumStream for later use  */
 		gumStream = stream;
@@ -120,7 +120,6 @@ function stopRecording() {
 	stopButton.style.display = "none";
 	secondsCounter.style.display = "none";
 
-	document.getElementById("formats").style.display = "none";
 
 	//reset button just in case the recording is stopped while paused
 	// pauseButton.innerHTML="Pause";
@@ -155,7 +154,7 @@ function createDownloadLink(blob) {
 	au.controls = true;
 	au.src = url;
 	au.style.border = "thick solid #2f80ed";
-	au.style.borderRadius = "20px";
+	au.style.borderRadius = "30px";
 
 	//retry link
 	//retry.href = "";
