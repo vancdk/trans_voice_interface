@@ -1,6 +1,6 @@
 Flask==2.0.1 
-
-tensorflow==2.5
-ffmpeg==1.4
 inaSpeechSegmenter==0.6.8
 
+#Attempt at making it lighter for heroku deployment by commenting the lines below
+#tensorflow==2.5
+#ffmpeg==1.4
