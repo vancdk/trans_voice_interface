@@ -137,8 +137,10 @@ function stopRecording() {
 }
 
 function createDownloadLink(blob) {
-	
+	//HOTFIX On rajouter des console.log
+	console.log("create downloadable link");
 	var url = URL.createObjectURL(blob);
+	console.log("create downloadable url", url);
 	var au = document.createElement('audio');
 	var player = document.createElement('div');
 	//var link = document.createElement('a');
@@ -173,6 +175,8 @@ function createDownloadLink(blob) {
 	//add the filename to the div
 	// player.appendChild(document.createTextNode(filename+".wav "));
 
+	//HOTFIX On rajouter des console.log
+	console.log("EVENT");
 	
 	//upload link
 	//upload.href="{{ url_for('result') }}";
@@ -188,8 +192,13 @@ function createDownloadLink(blob) {
 		  //};
 		  var fd=new FormData();
 		  fd.append("audio_data",blob, filename);
-		  //xhr.open("POST","upload.php",true);
-		  //xhr.send(fd);
+
+		  //HOTFIX On lance une requete POST vers "result"
+		  console.log('blob', blob)
+		  console.log('filename', filename)
+		  xhr.open("POST","result",true);
+		  xhr.send(fd);
+		  console.log("SENT");
 	})
 	//player.appendChild(upload);//add the upload link to li
 
